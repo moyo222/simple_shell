@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * get_history_file - This is a function that retrieves (gets) the history file
@@ -11,16 +11,16 @@ char *get_history_file(info_t *info)
 {
 char *buf, *dir;
 
-dir = _getenv(info, "HOME=");
+dir = get_env(info, "HOME=");
 if (!dir)
 return (NULL);
-buf = malloc(sizeof(char) * (_strlen(dir) + _strlen(HIST_FILE) + 2));
+buf = malloc(sizeof(char) * (shell_strlen(dir) + shell_strlen(HIST_FILE) + 2));
 if (!buf)
 return (NULL);
 buf[0] = 0;
-_strcpy(buf, dir);
-_strcat(buf, "/");
-_strcat(buf, HIST_FILE);
+shell_strcpy(buf, dir);
+shell_strcat(buf, "/");
+shell_strcat(buf, HIST_FILE);
 return (buf);
 }
 
@@ -46,10 +46,10 @@ if (fd == -1)
 return (-1);
 for (node = info->history; node; node = node->next)
 {
-_putsfd(node->str, fd);
-_putfd('\n', fd);
+puts_fd(node->str, fd);
+put_fd('\n', fd);
 }
-_putfd(BUF_FLUSH, fd);
+put_fd(BUF_FLUSH, fd);
 close(fd);
 return (1);
 }

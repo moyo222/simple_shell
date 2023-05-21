@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * list_len - This function establishes(determines) the length of linked list
@@ -39,7 +39,7 @@ if (!strs)
 return (NULL);
 for (i = 0; node; node = node->next, i++)
 {
-str = malloc(_strlen(node->str) + 1);
+str = malloc(shell_strlen(node->str) + 1);
 if (!str)
 {
 for (j = 0; j < i; j++)
@@ -48,7 +48,7 @@ free(strs);
 return (NULL);
 }
 
-str = _strcpy(str, node->str);
+str = shell_strcpy(str, node->str);
 strs[i] = str;
 }
 strs[i] = NULL;

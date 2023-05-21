@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * add_node - This is a function that adds a node to the beginning of the list
@@ -17,11 +17,11 @@ return (NULL);
 new_head = malloc(sizeof(list_t));
 if (!new_head)
 return (NULL);
-_memset((void *)new_head, 0, sizeof(list_t));
+memory_set((void *)new_head, 0, sizeof(list_t));
 new_head->num = num;
 if (str)
 {
-new_head->str = _strdup(str);
+new_head->str = shell_strdup(str);
 if (!new_head->str)
 {
 free(new_head);
@@ -52,11 +52,11 @@ node = *head;
 new_node = malloc(sizeof(list_t));
 if (!new_node)
 return (NULL);
-_memset((void *)new_node, 0, sizeof(list_t));
+memory_set((void *)new_node, 0, sizeof(list_t));
 new_node->num = num;
 if (str)
 {
-new_node->str = _strdup(str);
+new_node->str = shell_strdup(str);
 if (!new_node->str)
 {
 free(new_node);

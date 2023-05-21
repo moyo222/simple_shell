@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * get_environ - This is a function that returns
@@ -19,13 +19,13 @@ return (info->environ);
 }
 
 /**
-* _unsetenv - This is a function that removes an environment variable
+* unset_env - This is a function that removes an environment variable
 * @info: This is a structure that contains potential arguments.
 * It is used to maintain constant function prototype.
 *  Return: 1 on delete, 0 otherwise
 * @var: the string env var property
 */
-int _unsetenv(info_t *info, char *var)
+int unset_env(info_t *info, char *var)
 {
 list_t *node = info->env;
 size_t i = 0;
@@ -51,7 +51,7 @@ return (info->env_changed);
 }
 
 /**
-* _setenv - This is a function that initialize a new
+* set_env - This is a function that initialize a new
 * environment variable or modify an existing one
 * @info: This is a structure that contains potential arguments.
 * It is used to maintain constant function prototype.
@@ -59,7 +59,7 @@ return (info->env_changed);
 * @value: This is the string env var value
 *  Return: Always 0
 */
-int _setenv(info_t *info, char *var, char *value)
+int set_env(info_t *info, char *var, char *value)
 {
 char *buf = NULL;
 list_t *node;
@@ -68,12 +68,12 @@ char *p;
 if (!var || !value)
 return (0);
 
-buf = malloc(_strlen(var) + _strlen(value) + 2);
+buf = malloc(shell_strlen(var) + shell_strlen(value) + 2);
 if (!buf)
 return (1);
-_strcpy(buf, var);
-_strcat(buf, "=");
-_strcat(buf, value);
+shell_strcpy(buf, var);
+shell_strcat(buf, "=");
+shell_strcat(buf, value);
 node = info->env;
 while (node)
 {

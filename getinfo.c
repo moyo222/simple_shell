@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * clear_info - This function launches(initializes) info_t struct
@@ -24,13 +24,13 @@ int i = 0;
 info->fname = av[0];
 if (info->arg)
 {
-info->argv = strtow(info->arg, " \t");
+info->argv = str_to_word(info->arg, " \t");
 if (!info->argv)
 {
 info->argv = malloc(sizeof(char *) * 2);
 if (info->argv)
 {
-info->argv[0] = _strdup(info->arg);
+info->argv[0] = shell_strdup(info->arg);
 info->argv[1] = NULL;
 }
 }

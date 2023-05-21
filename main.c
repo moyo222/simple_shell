@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
 * main - entry point
@@ -29,11 +29,11 @@ if (errno == EACCES)
 exit(126);
 if (errno == ENOENT)
 {
-_eputs(av[0]);
-_eputs(": 0: Can't open ");
-_eputs(av[1]);
-_eputchar('\n');
-_eputchar(BUF_FLUSH);
+er_puts(av[0]);
+er_puts(": 0: Can't open ");
+er_puts(av[1]);
+er_putchar('\n');
+er_putchar(BUF_FLUSH);
 exit(127);
 }
 return (EXIT_FAILURE);
