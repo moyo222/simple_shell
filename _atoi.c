@@ -1,7 +1,7 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * interactive - returns true if shell is interactive mode
+ * interactive -  evaluate to true if the shell is in interactive mode.
  * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
@@ -12,7 +12,7 @@ return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - This function is used to check if the character is a delimeter
+ * is_delim - This function is to verify whether the character is a delimiter.
  * @c: This is the character to be checked
  * @delim: This refers to the delimeter string
  * Return: 1 if true, 0 if false
@@ -26,7 +26,8 @@ return (0);
 }
 
 /**
- * _isalpha - This function is used to check for an alphabetic character
+ * _isalpha - This function is is utilized to examine whether a character 
+ * is an alphabetical character.
  * @c: This is the character to input
  * Return: 1 if c is alphabetic, 0 otherwise
  */

@@ -1,12 +1,12 @@
-#include "shell.h"
+#include "main.h"
 
 /**
-* _strlen - This is a function that returns the length of a string
+* shell_strlen - This is a function that returns the length of a string
 * @s: This is the string whose length is to be checked
 *
 * Return: integer length of string
 */
-int _strlen(char *s)
+int shell_strlen(char *s)
 {
 int i = 0;
 
@@ -19,14 +19,14 @@ return (i);
 }
 
 /**
-* _strcmp - This is a function that performs
+* shell_strcmp - This is a function that performs
 * alphabetic comparison of two strings.
 * @s1: This is the first strang
 * @s2: This is the second strang
 *
 * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
 */
-int _strcmp(char *s1, char *s2)
+int shell_strcmp(char *s1, char *s2)
 {
 while (*s1 && *s2)
 {
@@ -57,13 +57,13 @@ return ((char *)haystack);
 }
 
 /**
-* _strcat - This is a funcion that connects two strings
+* shell_strcat - This is a funcion that connects two strings
 * @dest: This is the destination buffer
 * @src: This is the source buffer
 *
 * Return: pointer to destination buffer
 */
-char *_strcat(char *dest, char *src)
+char *shell_strcat(char *dest, char *src)
 {
 char *ret = dest;
 
