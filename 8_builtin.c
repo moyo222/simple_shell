@@ -11,7 +11,7 @@ int shell_exit(info_t *info)
 {
 int check_exit;
 
-if (info->argv[1]) 
+if (info->argv[1])
 {
 check_exit = error_atoi(info->argv[1]);
 if (check_exit == -1)

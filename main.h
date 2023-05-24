@@ -1,5 +1,5 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,23 +36,8 @@
 
 extern char **environ;
 
-
 /**
-* struct liststr - This is referred to as a singly linked list
-* @num: This is the number field
-* @str: This is known as a string
-* @next: This points to the next node
-*/
-typedef struct liststr
-{
-int num;
-char *str;
-struct liststr *next;
-} list_t;
-
-/**
-* struct passinfo – This function contains pseudo-arguements to pass into a
-* function,permitting uniform prototype for a function pointer struct
+* struct passinfo - contains pseudo-arguements to pass into a function,
 * @arg: This is a string produced from getline containing arguements
 * @argv: This is an array of strings generated from arg
 * @path: This is a string path for the present command
@@ -68,7 +53,6 @@ struct liststr *next;
 * @env_changed: This comes on if the environ was changed
 * @status: This is the return status of the last executed command
 * @cmd_buf: This function comes on if chaining.
-* It is the address of pointer to cmd_buf.
 * @cmd_buf_type: This is the CMD_type ||, &&, ;
 * @readfd: This is the fd from which to read line input from
 * @histcount: This is the number of lines in the history
@@ -95,6 +79,20 @@ int cmd_buf_type; /* CMD_type ||, &&, ; */
 int readfd;
 int histcount;
 } info_t;
+
+
+/**
+* struct liststr - This is referred to as a singly linked list
+* @num: This is the number field
+* @str: This is known as a string
+* @next: This points to the next node
+*/
+typedef struct liststr
+{
+int num;
+char *str;
+struct liststr *next;
+} list_t;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \

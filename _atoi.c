@@ -26,7 +26,7 @@ return (0);
 }
 
 /**
- * _isalpha - This function is is utilized to examine whether a character 
+ * _isalpha - This function is is utilized to examine whether a character
  * is an alphabetical character.
  * @c: This is the character to input
  * Return: 1 if c is alphabetic, 0 otherwise
