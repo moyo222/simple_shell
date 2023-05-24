@@ -16,7 +16,7 @@ while (r != -1 && builtin_ret != -2)
 {
 clear_info(info);
 if (interactive(info))
-_puts("> ");
+_puts("$ ");
 er_putchar(BUF_FLUSH);
 r = get_input(info);
 if (r != -1)
