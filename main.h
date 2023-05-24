@@ -36,6 +36,22 @@
 
 extern char **environ;
 
+
+
+
+/**
+* struct liststr - This is referred to as a singly linked list
+* @num: This is the number field
+* @str: This is known as a string
+* @next: This points to the next node
+*/
+typedef struct liststr
+{
+int num;
+char *str;
+struct liststr *next;
+} list_t;
+
 /**
 * struct passinfo - contains pseudo-arguements to pass into a function,
 * @arg: This is a string produced from getline containing arguements
@@ -79,20 +95,6 @@ int cmd_buf_type; /* CMD_type ||, &&, ; */
 int readfd;
 int histcount;
 } info_t;
-
-
-/**
-* struct liststr - This is referred to as a singly linked list
-* @num: This is the number field
-* @str: This is known as a string
-* @next: This points to the next node
-*/
-typedef struct liststr
-{
-int num;
-char *str;
-struct liststr *next;
-} list_t;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
