@@ -1,6 +1,6 @@
 # 0x16. C - Simple Shell
-  Project to be done in teams of 2 people 
- 
+Project to be done in teams of 2 people
+
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
@@ -42,16 +42,16 @@ The only difference is when you print an error, the name of the program must be 
 Example of error with sh:
 
 $ echo "qwerty" | /bin/sh
-/bin/sh: 1: qwerty: sorry! command not found 
+/bin/sh: 1: qwerty: sorry! command not found
 $ echo "qwerty" | /bin/../bin/sh
-/bin/../bin/sh: 1: qwerty: sorry! command not found 
+/bin/../bin/sh: 1: qwerty: sorry! command not found
 $
 Same error with your program hsh:
 
 $ echo "qwerty" | ./hsh
-./hsh: 1: qwerty: sorry! command not found 
+./hsh: 1: qwerty: sorry! command not found
 $ echo "qwerty" | ./././hsh
-./././hsh: 1: qwerty: sorry! command not found 
+./././hsh: 1: qwerty: sorry! command not found
 $
 
 # List of allowed functions and system calls
@@ -95,5 +95,5 @@ write (man 2 write)
 
 # files
 - README.md - description about the project repo
-- AUTHORS - file at the  root of the repository, listing all individuals having contributed content to the repository. 
+- AUTHORS - file at the  root of the repository, listing all individuals having contributed content to the repository.
 
