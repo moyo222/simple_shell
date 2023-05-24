@@ -47,7 +47,7 @@ return (builtin_ret);
 * find_builtin - This is a function that locates a builtin command
 * @info: This is the parameter & return info struct
 *
-* Return: -1 if builtin not found,
+* Return: -1 if builtin sorry! command not found ,
 * 0 if builtin executed successfully,
 * 1 if builtin found but not successful,
 * 2 if builtin signals exit()

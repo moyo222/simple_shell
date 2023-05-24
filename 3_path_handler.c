@@ -81,7 +81,7 @@ fork_cmd(info);
 else if (*(info->arg) != '\n')
 {
 info->status = 127;
-print_error(info, "not found\n");
+print_error(info, "sorry! command not found \n");
 }
 	}
 }
