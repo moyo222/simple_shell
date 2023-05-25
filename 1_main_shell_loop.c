@@ -16,7 +16,7 @@ while (r != -1 && builtin_ret != -2)
 {
 clear_info(info);
 if (interactive(info))
-_puts("$ ");
+_puts("> ");
 er_putchar(BUF_FLUSH);
 r = get_input(info);
 if (r != -1)
@@ -47,7 +47,7 @@ return (builtin_ret);
 * find_builtin - This is a function that locates a builtin command
 * @info: This is the parameter & return info struct
 *
-* Return: -1 if builtin sorry! command not found ,
+* Return: -1 if builtin not found ,
 * 0 if builtin executed successfully,
 * 1 if builtin found but not successful,
 * 2 if builtin signals exit()

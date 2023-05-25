@@ -1,11 +1,14 @@
 #include "main.h"
+
+
 /**
- * find_path - This is a function finds the cmd in the PATH string
- * @info: This is the info struct
- * @pathstr: This refers to the PATH string
- * @cmd: This is the cmd to find
- * Return: full path of cmd if found or NULL
- */
+* find_path - This is a function finds the cmd in the PATH string
+* @info: This is the info struct
+* @pathstr: This refers to the PATH string
+* @cmd: This is the cmd to find
+*
+* Return: full path of cmd if found or NULL
+*/
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
 int i = 0, curr_pos = 0;
@@ -42,11 +45,11 @@ return (NULL);
 }
 
 /**
- * find_cmd - finds a command in PATH
- * @info: the parameter & return info struct
- *
- * Return: void
- */
+* find_cmd - finds a command in PATH
+* @info: the parameter & return info struct
+*
+* Return: void
+*/
 void find_cmd(info_t *info)
 {
 char *path = NULL;
@@ -78,17 +81,17 @@ fork_cmd(info);
 else if (*(info->arg) != '\n')
 {
 info->status = 127;
-print_error(info, "sorry! command not found \n");
+print_error(info, "not found \n");
 }
 	}
 }
 
 /**
- * fork_cmd - This is a function that forks an exec thread to run cmd
- * @info: This is the parameter & return info struct
- *
- * Return: void
- */
+* fork_cmd - This is a function that forks an exec thread to run cmd
+* @info: This is the parameter & return info struct
+*
+* Return: void
+*/
 void fork_cmd(info_t *info)
 {
 pid_t child_pid;
