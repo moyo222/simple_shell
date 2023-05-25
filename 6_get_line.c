@@ -1,8 +1,8 @@
 #include "main.h"
 
-/*
+/**
 * input_buf - These are chained command buffers
-* @info: Thus is the parameter structure
+* @info: This is the parameter structure
 * @buf: This is the address of the buffer
 * @len: This is the address of the len var
 *
